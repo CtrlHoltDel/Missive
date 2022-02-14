@@ -10,7 +10,11 @@ block content
     div 
       p No Posts - Be the first!
   
+
   .posts 
+    if(currentUser)
+      a(href="/post")
+        button New post
     each post in posts
       if(currentUser)
         div.posts__post

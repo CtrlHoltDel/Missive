@@ -1,7 +1,7 @@
 # Missive
 
 Simple message board app created with Node using [express](https://expressjs.com/) and the [pug template engine](https://pugjs.org).
-Created with the intent of using and practicing server side authentication.
+Created with the intent of using and practicing user authentication.
 
 ## Tech
 

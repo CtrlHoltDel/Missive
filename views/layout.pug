@@ -12,9 +12,7 @@ html
         h1= "Missive"
       nav         
         if(currentUser)
-          a(href="/post")
-            button New post
-          p Logged in as #{currentUser.username}
+          p.logged-in Logged in as #{currentUser.username}
           a(href="/auth/logout")
             button Log out
         else
