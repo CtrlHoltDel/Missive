@@ -1,4 +1,31 @@
 extends layout
 
 block content
-  h1= title
+
+  if(error)
+    div
+      p #{error}
+
+  if(noPosts)
+    div 
+      p No Posts - Be the first!
+  
+  .posts 
+    each post in posts
+      if(currentUser)
+        div.posts__post
+          div.posts__post__head
+            p.posts__post__head__user #{post.username}
+            div.posts__post__head__date
+              p #{post.formatted_date}
+              p #{post.formatted_time}
+          p.posts__post__body #{post.body}
+      else 
+        div.posts__post
+          div.posts__post__head
+            p.posts__post__head__user Login to view users
+            div.posts__post__head__date
+              p #{post.formatted_date}
+              p #{post.formatted_time}
+          p.posts__post__body #{post.body}
+

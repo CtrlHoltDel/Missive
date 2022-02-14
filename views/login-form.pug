@@ -1,0 +1,12 @@
+extends layout 
+
+block content 
+
+  div 
+    form#log-in(method="POST" action="/auth/login")
+      label(for="log-in-username") Username:
+      input#log-in__username(type="text" placeholder="Username" name="username")
+      label(for="log-in-password") Password:
+      input#log-in__password(type="password" placeholder="Password" name="password")
+
+      button(type="submit") Log in
