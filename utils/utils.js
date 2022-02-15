@@ -15,3 +15,11 @@ exports.authenticateUser = (req, res, next) => {
     res.redirect("/");
   }
 };
+
+exports.checkAdmin = (req, res, next) => {
+  if (req.user?.administrator) {
+    next();
+  } else {
+    res.redirect("/");
+  }
+};

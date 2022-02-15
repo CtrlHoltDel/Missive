@@ -4,7 +4,7 @@ db.on("error", console.error.bind(console, "mongo connection error"));
 const express = require("express");
 const path = require("path");
 const passport = require("passport");
-const session = require("express-session");
+const session = require("cookie-session");
 
 const authRoute = require("./routes/auth");
 const postRoute = require("./routes/post");
@@ -13,6 +13,7 @@ require("./strategies/local");
 
 const { validationError, serverError } = require("./errors/errors");
 const { authenticateUser } = require("./utils/utils");
+const adminRouter = require("./routes/admin");
 
 const app = express();
 
@@ -24,7 +25,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
-    cookie: { maxAge: 2000 },
     resave: false,
     saveUninitialized: true,
   })
@@ -43,6 +43,7 @@ app.use((req, res, next) => {
 app.get("/", indexRouter);
 app.use("/auth", authRoute);
 app.use("/post", authenticateUser, postRoute);
+app.use("/admin", authenticateUser, adminRouter);
 
 app.get("/*", (req, res, next) => {
   res.render("404");

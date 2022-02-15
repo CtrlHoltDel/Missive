@@ -1,0 +1,11 @@
+extends layout 
+
+block content 
+  div.form-container
+    form(method="POST" action="/admin")
+      p Enter Username
+      input(type="text" name="admin")
+      button(type="submit") Become Administator
+      if(error)
+        p #{error}
+

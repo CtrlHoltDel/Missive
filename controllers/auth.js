@@ -1,3 +1,4 @@
+const passport = require("passport");
 const { signUpUser } = require("../models/auth");
 
 exports.handleRegister = (req, res, next) => {
@@ -12,17 +13,23 @@ exports.handleRegister = (req, res, next) => {
     });
 };
 
-exports.register = (req, res, next) => {
+exports.serveRegister = (req, res, next) => {
   res.render("register-form");
 };
 
-exports.handleLogin = (req, res, next) => {
-  let error = null;
+exports.serveLogin = (req, res, next) => {
+  res.render("login-form");
+};
 
-  if (req.session.messages)
-    error = req.session.messages[req.session.messages?.length - 1];
-
-  res.render("login-form", { error });
+exports.loginPost = (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) return next(err);
+    if (!user) return res.render("login-form", { error: info.message });
+    req.login(user, (err) => {
+      if (err) return next(err);
+      res.redirect("/");
+    });
+  })(req, res, next);
 };
 
 exports.handleLogout = (req, res, next) => {

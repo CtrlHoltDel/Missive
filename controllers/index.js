@@ -1,6 +1,6 @@
 const { Post } = require("../models/Schema");
 
-exports.index = (req, res, next) => {
+exports.serveIndex = (req, res, next) => {
   Post.find()
     .sort({ post_date: -1 })
     .then((posts) => {

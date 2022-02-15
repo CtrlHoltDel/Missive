@@ -1,7 +1,7 @@
-const { index } = require("../controllers");
+const { serveIndex } = require("../controllers");
 
 const indexRouter = require("express").Router();
 
-indexRouter.get("/", index);
+indexRouter.get("/", serveIndex);
 
 module.exports = indexRouter;

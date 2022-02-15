@@ -12,6 +12,19 @@ body {
   background-image: url("../images/bg.png");
 }
 
+button {
+  background-color: #008897;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #059eaf;
+}
+
 header {
   width: 100vw;
   background-color: #2f4858;
@@ -47,8 +60,43 @@ header nav {
           align-items: flex-end;
 }
 
-header nav .logged-in {
+header nav p {
+  margin-right: 5px;
+}
+
+header nav .admin-button {
+  margin-right: 10px;
+}
+
+header nav .user-info {
   margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header nav .user-info a {
+  background-color: none;
+  position: absolute;
+  background-color: transparent;
+  right: 80px;
+  top: 35px;
+}
+
+header nav .user-info a .admin-icon {
+  width: 20px;
+  height: 20px;
+}
+
+header nav .user-info a:hover {
+  background-color: transparent;
+  cursor: pointer;
 }
 
 header nav button {
@@ -68,6 +116,15 @@ header a {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
+}
+
+.login-info {
+  margin-top: -20px;
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+  background-color: #2f4858;
+  color: white;
+  text-align: center;
 }
 
 .posts {
@@ -176,6 +233,11 @@ header a {
   border-radius: 5px;
 }
 
+.form-container form p {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
 .form-container form textarea {
   margin-bottom: 15px;
   border-radius: 5px;
@@ -193,19 +255,6 @@ header a {
   border: none;
   margin-top: 2px;
   border-radius: 2px;
-}
-
-.form-container form button {
-  background-color: #008897;
-  border: none;
-  color: white;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-.form-container form button:hover {
-  cursor: pointer;
-  background-color: #059eaf;
 }
 
 .form-container form .register-error {
@@ -238,5 +287,61 @@ header a {
   width: 100vw;
   text-align: center;
   margin-top: 20px;
+}
+
+.admin-container {
+  width: 100vw;
+  margin-top: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.admin-container__settings {
+  padding: 20px 25px;
+  background-color: #2f4858;
+  width: 300px;
+  text-align: center;
+  border-radius: 5px;
+}
+
+.admin-container__settings button {
+  margin-top: 10px;
+}
+
+.admin-container .users-list {
+  margin-top: 20px;
+  padding: 20px 25px;
+  background-color: #2f4858;
+  border-radius: 5px;
+  width: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.admin-container .users-list h2 {
+  margin-bottom: 10px;
 }
 /*# sourceMappingURL=style.css.map */

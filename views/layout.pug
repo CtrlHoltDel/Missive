@@ -12,13 +12,27 @@ html
         h1= "Missive"
       nav         
         if(currentUser)
-          p.logged-in Logged in as #{currentUser.username}
-          a(href="/auth/logout")
-            button Log out
+          div.user-info
+            if(currentUser.administrator)
+              a(href="/admin/panel")
+                img.admin-icon(src="/images/admin.png", alt="")
+            p.logged-in Logged in as #{currentUser.username}
+
+          div
+            if(currentUser.administrator)
+            else 
+              a.admin-button(href="/admin")
+                button Become Admin
+            a(href="/auth/logout")
+              button Log out
         else
           a(href="/auth/register")
-            button Sign up
+            button Register
           a(href="/auth/login")
             button Log in
+    if(currentUser)
+    else
+      div.login-info Log in or create an account to view detailed post information or post a message
+
 
     block content

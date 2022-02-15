@@ -15,6 +15,19 @@ body {
   background-image: url("../images/bg.png");
 }
 
+button {
+  background-color: $cta;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: $hover-colour;
+}
+
 header {
   width: 100vw;
   background-color: $primary-colour;
@@ -34,8 +47,36 @@ header {
     flex-direction: column;
     align-items: flex-end;
 
-    .logged-in {
+    p {
+      margin-right: 5px;
+    }
+
+    .admin-button {
+      margin-right: 10px;
+    }
+
+    .user-info {
       margin-top: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      a {
+        background-color: none;
+        position: absolute;
+        background-color: transparent;
+        right: 80px;
+        top: 35px;
+        .admin-icon {
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+      a:hover {
+        background-color: transparent;
+        cursor: pointer;
+      }
     }
 
     button {
@@ -57,6 +98,15 @@ header {
     text-decoration: none;
     font-size: 1.5rem;
   }
+}
+
+.login-info {
+  margin-top: -20px;
+  padding-bottom: 5px;
+  font-size: 1.2rem;
+  background-color: $primary-colour;
+  color: white;
+  text-align: center;
 }
 
 .posts {
@@ -132,6 +182,11 @@ header {
     padding: 20px;
     border-radius: 5px;
 
+    p {
+      margin-bottom: 10px;
+      text-align: center;
+    }
+
     textarea {
       margin-bottom: 15px;
       border-radius: 5px;
@@ -149,19 +204,6 @@ header {
       border: none;
       margin-top: 2px;
       border-radius: 2px;
-    }
-
-    button {
-      background-color: $cta;
-      border: none;
-      color: white;
-      padding: 5px;
-      border-radius: 5px;
-    }
-
-    button:hover {
-      cursor: pointer;
-      background-color: $hover-colour;
     }
 
     .register-error {
@@ -186,4 +228,40 @@ header {
   width: 100vw;
   text-align: center;
   margin-top: 20px;
+}
+
+.admin-container {
+  width: 100vw;
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  flex-direction: column;
+  &__settings {
+    padding: 20px 25px;
+    background-color: $primary-colour;
+    width: 300px;
+    text-align: center;
+    border-radius: 5px;
+
+    button {
+      margin-top: 10px;
+    }
+  }
+
+  .users-list {
+    margin-top: 20px;
+    padding: 20px 25px;
+    background-color: $primary-colour;
+    border-radius: 5px;
+    width: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    h2 {
+      margin-bottom: 10px;
+    }
+  }
 }

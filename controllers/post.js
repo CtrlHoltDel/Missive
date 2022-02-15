@@ -1,6 +1,6 @@
 const { createPost } = require("../models/post");
 
-exports.newPost = (req, res, next) => {
+exports.servePost = (req, res, next) => {
   res.render("post-form");
 };
 

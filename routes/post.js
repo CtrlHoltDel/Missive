@@ -1,7 +1,7 @@
-const { newPost, submitPost } = require("../controllers/post");
+const { servePost, submitPost } = require("../controllers/post");
 
 const postRoute = require("express").Router();
 
-postRoute.route("/").get(newPost).post(submitPost);
+postRoute.route("/").get(servePost).post(submitPost);
 
 module.exports = postRoute;

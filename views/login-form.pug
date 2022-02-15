@@ -11,9 +11,9 @@ block content
       p Log In
     form#log-in(method="POST" action="/auth/login")
       label(for="log-in-username") Username:
-      input#log-in__username(type="text" placeholder="Username" name="username")
+      input#log-in__username(type="text" placeholder="Username" name="username" required)
       label(for="log-in-password") Password:
-      input#log-in__password(type="password" placeholder="Password" name="password")
+      input#log-in__password(type="password" placeholder="Password" name="password" required)
 
       button(type="submit") Log in
       if(error)

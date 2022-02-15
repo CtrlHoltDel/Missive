@@ -1,26 +1,15 @@
-const passport = require("passport");
 const {
-  register,
+  serveRegister,
   handleRegister,
-  handleLogin,
+  serveLogin,
   handleLogout,
+  loginPost,
 } = require("../controllers/auth");
 
 const authRoute = require("express").Router();
 
-authRoute.route("/register").get(register).post(handleRegister);
-
-authRoute
-  .route("/login")
-  .get(handleLogin)
-  .post(
-    passport.authenticate("local", {
-      successRedirect: "/",
-      failureRedirect: "/auth/login",
-      failureMessage: true,
-    })
-  );
-
+authRoute.route("/register").get(serveRegister).post(handleRegister);
+authRoute.route("/login").get(serveLogin).post(loginPost);
 authRoute.get("/logout", handleLogout);
 
 module.exports = authRoute;

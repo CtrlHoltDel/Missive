@@ -12,11 +12,11 @@ block content
         p No Posts - Be the first!
       else 
         p No Posts - Register or log in and be the first!
-
   .posts 
     if(currentUser)
       a(href="/post")
         button New post
+      if(currentUser)
     each post in posts
       if(currentUser)
         div.posts__post
@@ -29,6 +29,8 @@ block content
       else 
         div.posts__post
           div.posts__post__head
-            p.posts__post__head__user Login to view post information
           p.posts__post__body #{post.body}
+  if(message)        
+    .message 
+      p #{message}
 
