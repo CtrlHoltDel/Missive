@@ -1,7 +1,11 @@
 # Missive
 
 Simple message board app created with Node using [express](https://expressjs.com/) and the [pug template engine](https://pugjs.org).
-Created with the intent of using and practicing user authentication.
+Created with the intent implimenting and putting into practice user authentication and protected routes.
+
+[Live Version](https://chd-missive.herokuapp.com)
+
+Hosted on [heroku](https://dashboard.heroku.com/)
 
 ## Tech
 
