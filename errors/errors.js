@@ -1,5 +1,12 @@
 exports.validationError = (err, req, res, next) => {
-  next(err);
+  if (
+    err === "Passwords do not match" ||
+    err === "User with that name already exists"
+  ) {
+    res.render("sign-up-form", { error: err });
+  } else {
+    next(err);
+  }
 };
 
 exports.serverError = (err, req, res, next) => {

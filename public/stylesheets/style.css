@@ -91,7 +91,7 @@ header a {
 
 .posts button {
   padding: 20px 50px;
-  background-color: #2f4858;
+  background-color: #008897;
   color: white;
   border: none;
   border-radius: 5px;
@@ -100,7 +100,7 @@ header a {
 
 .posts button:hover {
   cursor: pointer;
-  background-color: #2f4858d7;
+  background-color: #059eaf;
 }
 
 .posts__post {
@@ -138,6 +138,83 @@ header a {
   margin-top: 10px;
 }
 
+.form-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 100px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 20px;
+}
+
+.form-container .title {
+  font-size: 1.2rem;
+}
+
+.form-container form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  min-width: 250px;
+  background-color: #2f4858;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.form-container form textarea {
+  margin-bottom: 15px;
+  border-radius: 5px;
+  border: none;
+  resize: none;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-left: 15px solid transparent;
+}
+
+.form-container form input {
+  margin-bottom: 15px;
+  padding: 5px;
+  border: none;
+  margin-top: 2px;
+  border-radius: 2px;
+}
+
+.form-container form button {
+  background-color: #008897;
+  border: none;
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.form-container form button:hover {
+  cursor: pointer;
+  background-color: #059eaf;
+}
+
+.form-container form .register-error {
+  color: red;
+  margin-top: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
 .page404 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -155,5 +232,11 @@ header a {
       -ms-flex-direction: column;
           flex-direction: column;
   row-gap: 18px;
+}
+
+.no-posts {
+  width: 100vw;
+  text-align: center;
+  margin-top: 20px;
 }
 /*# sourceMappingURL=style.css.map */

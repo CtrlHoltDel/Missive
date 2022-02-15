@@ -7,3 +7,11 @@ exports.formatDate = (unformattedDate) => {
 
   return { formattedDate, time };
 };
+
+exports.authenticateUser = (req, res, next) => {
+  if (req.user) {
+    next();
+  } else {
+    res.redirect("/");
+  }
+};

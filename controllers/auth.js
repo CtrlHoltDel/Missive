@@ -1,9 +1,9 @@
 const { signUpUser } = require("../models/auth");
 
-exports.handleSignUp = (req, res, next) => {
-  const { username, password } = req.body;
+exports.handleRegister = (req, res, next) => {
+  const { username, password, confirm } = req.body;
 
-  signUpUser(username, password)
+  signUpUser(username, password, confirm)
     .then(() => {
       res.redirect("/auth/login");
     })
@@ -12,12 +12,17 @@ exports.handleSignUp = (req, res, next) => {
     });
 };
 
-exports.signUp = (req, res, next) => {
-  res.render("sign-up-form");
+exports.register = (req, res, next) => {
+  res.render("register-form");
 };
 
 exports.handleLogin = (req, res, next) => {
-  res.render("login-form");
+  let error = null;
+
+  if (req.session.messages)
+    error = req.session.messages[req.session.messages?.length - 1];
+
+  res.render("login-form", { error });
 };
 
 exports.handleLogout = (req, res, next) => {

@@ -7,9 +7,11 @@ block content
       p #{error}
 
   if(noPosts)
-    div 
-      p No Posts - Be the first!
-  
+    div.no-posts
+      if(currentUser)
+        p No Posts - Be the first!
+      else 
+        p No Posts - Register or log in and be the first!
 
   .posts 
     if(currentUser)
@@ -27,9 +29,6 @@ block content
       else 
         div.posts__post
           div.posts__post__head
-            p.posts__post__head__user Login to view users
-            div.posts__post__head__date
-              p #{post.formatted_date}
-              p #{post.formatted_time}
+            p.posts__post__head__user Login to view post information
           p.posts__post__body #{post.body}
 

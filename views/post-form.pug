@@ -1,9 +1,7 @@
 extends layout 
 
 block content 
-
-  div 
-    form#new_post(method="POST" action="/post")
-      label(for="new_post__body") Username:
-      input#new_post__body(type="text" placeholder="Create a post" name="post")
-      button#new_post__submit(type="submit") new post
+  div.form-container
+    form(method="POST" action="/post")
+      textarea( cols="30", rows="10" type="text" placeholder="Create a post" name="post") 
+      button(type="submit") Submit Post

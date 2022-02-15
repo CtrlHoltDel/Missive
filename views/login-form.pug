@@ -2,7 +2,13 @@ extends layout
 
 block content 
 
-  div 
+  div.form-container
+    if(message)
+      div
+        p #{message}
+    
+    div.title
+      p Log In
     form#log-in(method="POST" action="/auth/login")
       label(for="log-in-username") Username:
       input#log-in__username(type="text" placeholder="Username" name="username")
@@ -10,3 +16,5 @@ block content
       input#log-in__password(type="password" placeholder="Password" name="password")
 
       button(type="submit") Log in
+      if(error)
+        p.register-error #{error}

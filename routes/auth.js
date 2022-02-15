@@ -1,16 +1,14 @@
-const { check } = require("express-validator");
 const passport = require("passport");
 const {
-  signUp,
-  handleSignUp,
+  register,
+  handleRegister,
   handleLogin,
   handleLogout,
 } = require("../controllers/auth");
-const { validateUser } = require("../utils/validation");
 
 const authRoute = require("express").Router();
 
-authRoute.route("/sign-up").get(signUp).post(validateUser, handleSignUp);
+authRoute.route("/register").get(register).post(handleRegister);
 
 authRoute
   .route("/login")
@@ -19,6 +17,7 @@ authRoute
     passport.authenticate("local", {
       successRedirect: "/",
       failureRedirect: "/auth/login",
+      failureMessage: true,
     })
   );
 
